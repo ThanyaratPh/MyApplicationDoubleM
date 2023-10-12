@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1049290280710",
+    "firebase_url": "https://doublem-91fd8-default-rtdb.firebaseio.com",
+    "project_id": "doublem-91fd8",
+    "storage_bucket": "doublem-91fd8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049290280710:android:7030d78a37161abf9ad887",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1049290280710-s6jh9mjakad57mvkchgv236t5j88ekib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL5neQrF-c-xTYjqkjFA2wmkg0AeS9SvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1049290280710-s6jh9mjakad57mvkchgv236t5j88ekib.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
