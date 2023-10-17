@@ -17,53 +17,53 @@ List<MenuItem> menu = [
       "Strawberry Lemonade",
       [0,5000,5000,0,0,0,0,0,0],
       "images/Starwberry Lemonade.jpg",
-      ["Coconut","Pea"]
+      ["Strawberry","Lemonade"]
     ),
     MenuItem(
       "Fruit Punch",
       [0,0,0,0,8000,0,0,0,0],
       "images/Fruitpunch.jpg",
-      ["Strawberry","Soda","Lemond"]
+      ["Punch","Soda","Lemond"]
     ),
     MenuItem(
       "Melon Lemon Soda",
       [0,5000,0,5000,0,0,0,0,0],
       "images/MelonLemon.jpg",
-      ["Strawberry","BlueHawaii"]
+      ["Melon","Lemonade","Soda"]
   ),MenuItem(
       "Orange Mogito",
       [0,5000,0,0,0,0,0,0,0],
       "images/OrangeMojito.jpg",
-      ["Strawberry","Lemon","ice","Soda"]
+      ["Orange","Lemonade","Soda"]
   ),
     MenuItem(
       "Sunset Mocktail",
       [0,4000,0,3000,3000,0,0,0,0],
       "images/Sunsetmocktail.jpg",
-      ["Strawberry","Lemon","ice","Soda"]
+      ["Strawberry","Sprites","Orange"]
   ),
       MenuItem(
       "Ms.Lively",
       [0,4000,0,3000,3000,0,0,0,0],
       "images/Ms.lively.jpg",
-      ["Strawberry","Lemon","ice","Soda"]
+      ["Strawberry","Lynchee","Lemonade","Soda"]
   ),
       MenuItem(
       "Coconut Pea",
       [0,4000,0,3000,3000,0,0,0,0],
       "images/Coconutbutterfly.jpg",
-      ["Strawberry","Lemon","ice","Soda"]
+      ["Coconut","Pea"]
   ),
       MenuItem(
-      "Coconut Blue Hawii",
+      "Coconut BlueHawii",
       [0,4000,0,3000,3000,0,0,0,0],
       "images/CoconutBlueHawaii.jpg",
-      ["Strawberry","Lemon","ice","Soda"]
+      ["BlueHawaii","Coconut","Soda"]
   ),
       MenuItem(
       "Coconut Punch",
       [0,4000,0,3000,3000,0,0,0,0],
       "images/CoconutPunch.jpg",
-      ["Strawberry","Lemon","ice","Soda"]
+      ["Coconut","Punch","Soda"]
   ),
   ];

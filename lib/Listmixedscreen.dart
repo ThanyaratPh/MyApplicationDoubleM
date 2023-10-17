@@ -110,8 +110,14 @@ class _ListmixsceenState extends State<Listmixsceen> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).pop();
-          },
+          setState(() {
+            for (var item in selectedMenuItems) {
+              item.checkboxValue1 = false;
+            }
+            selectedMenuItems.clear();
+          });
+          Navigator.of(context).pop(); 
+        },
         ),
       ),
       body: ListView.builder(
