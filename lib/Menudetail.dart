@@ -7,36 +7,35 @@ import 'package:flutter_application_1/menubeverage.dart';
 class MenuDetail extends StatelessWidget {
   final Menulist menuItem;
   MenuDetail(this.menuItem);
+
   void sendToFirebase(Menulist item, int insertedId) async {
-  final dbHelper = DatabaseHelper.instance;
+    final dbHelper = DatabaseHelper.instance;
 
-  List<Map<String, dynamic>> rows = await dbHelper.queryAllMenuItems(); 
+    if (item.ingredient != null && item.ingredient.isNotEmpty) {
+      int insertedId = await dbHelper.insertMenuItem({
+        DatabaseHelper.columnName: item.name,
+        DatabaseHelper.columnPump: item.pump.join(','),
+        DatabaseHelper.columnImagePath: item.imagePath,
+        DatabaseHelper.columnIngredient: item.ingredient,
+      });
 
-  for (var row in rows) {
-    List<int> pump = (row[DatabaseHelper.columnPump] as String)
-        .split(',')
-        .map((str) => int.parse(str))
-        .toList();
-
-    if (pump.isNotEmpty) {
+      print('รายการ pump ของเมนู ${item.name}: ${item.pump}');
+      print('เลขที่รายการที่แทรก: $insertedId');
 
       DatabaseReference databaseReference = FirebaseDatabase.instance.reference();
 
       Map<String, dynamic> dataToSend = {
-      'pump': '$insertedId,${item.pump.join(',')}',
+        'pump': '$insertedId,${item.pump.join(',')}',
       };
       await databaseReference.child('button').update(dataToSend);
-      break;
     }
   }
-}
+
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
-        title: Text(
-          menuItem.name,style: TextStyle(color: Colors.black)
-        ),
+      appBar: AppBar(
+        title: Text(menuItem.name, style: TextStyle(color: Colors.black)),
         iconTheme: IconThemeData(color: Colors.grey),
         backgroundColor: Colors.white,
       ),
@@ -44,22 +43,22 @@ class MenuDetail extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-           width: double.infinity,
-           height: 400,
-           decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(menuItem.imagePath),
-              fit: BoxFit.cover,
-            ),
-            borderRadius: BorderRadius.circular(8),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black,
-                offset: Offset(0,2),
-                blurRadius: 6,
+            width: double.infinity,
+            height: 400,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(menuItem.imagePath),
+                fit: BoxFit.cover,
               ),
-            ]
-           ),
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black,
+                  offset: Offset(0, 2),
+                  blurRadius: 6,
+                ),
+              ],
+            ),
           ),
           Padding(
             padding: EdgeInsets.all(16),
@@ -73,7 +72,7 @@ class MenuDetail extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height:30),
+                SizedBox(height: 30),
                 Text(
                   'Ingredients:',
                   style: TextStyle(
@@ -81,17 +80,17 @@ class MenuDetail extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              SizedBox(height: 8),
-              Text(
-                menuItem.ingredient,
-                style: TextStyle(
-                  fontSize:16,
+                SizedBox(height: 8),
+                Text(
+                  menuItem.ingredient,
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
                 ),
-              ),
               ],
             ),
           ),
-          SizedBox(height:20),
+          SizedBox(height: 20),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -99,42 +98,45 @@ class MenuDetail extends StatelessWidget {
               height: 70,
               child: ElevatedButton(
                 onPressed: () async {
-                   final dbHelper = DatabaseHelper.instance;
+                  final dbHelper = DatabaseHelper.instance;
                   int insertedId = await dbHelper.insertMenuItem({
                     DatabaseHelper.columnName: menuItem.name,
-                    DatabaseHelper.columnPump: menuItem.pump.join(','), 
+                    DatabaseHelper.columnPump: menuItem.pump.join(','),
                     DatabaseHelper.columnImagePath: menuItem.imagePath,
+                    DatabaseHelper.columnIngredient: menuItem.ingredient,
                   });
 
                   print('รายการ pump ของเมนู ${menuItem.name}: ${menuItem.pump}');
                   print('เลขที่รายการที่แทรก: $insertedId');
 
-                  sendToFirebase(menuItem,insertedId);
-                 Navigator.push(
+                  sendToFirebase(menuItem, insertedId);
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Animationscreen(selectedMenuName: menuItem.name),
+                      builder: (context) =>
+                          Animationscreen(selectedMenuName: menuItem.name),
                     ),
                   );
-                  },
-              style:  ElevatedButton.styleFrom(
-                padding: EdgeInsets.all(16), backgroundColor: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25),
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.all(16),
+                  backgroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                ),
+                child: Text(
+                  'Confirm Menu',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
                 ),
               ),
-              child: Text(
-                'Confirm Menu',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
-              )
-           ) 
-            ) 
+            ),
           ),
         ],
-      )
+      ),
     );
   }
 }

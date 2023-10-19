@@ -112,7 +112,7 @@ class _AnimationscreenState extends State<Animationscreen> with TickerProviderSt
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(seconds: 20),
+      duration: Duration(seconds: 25),
       vsync: this,
     );
 
@@ -156,7 +156,7 @@ void _goToListMenuScreen() async {
             right: 50,
             top: 70,
             child: CountdownWidget(
-              duration: Duration(seconds: 40),
+              duration: Duration(seconds: 35),
               textStyle: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.bold,

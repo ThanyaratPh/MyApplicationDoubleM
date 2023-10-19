@@ -59,7 +59,6 @@ class Listbeverage extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) => MenuDetail(list)),
                   );
-
               },
             ),
           );

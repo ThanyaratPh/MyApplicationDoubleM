@@ -71,7 +71,7 @@ class _ListmixsceenState extends State<Listmixsceen> {
     // Send data to Realtime Database
     DatabaseReference databaseReference = FirebaseDatabase.instance.reference();
     Map<String, dynamic> dataToSend = {
-      'str': '$insertedId,$combinedPumpString',
+      'pump': '$insertedId,$combinedPumpString',
     };
 
     await databaseReference.child('button').update(dataToSend);
@@ -208,7 +208,6 @@ class _ListmixsceenState extends State<Listmixsceen> {
                       MaterialPageRoute(builder: (context) => Animationscreen(selectedMenuName: "Mixed menu")),
                     );
 
-                    // เมื่อกดปุ่ม Confirm แล้ว ล้างการเลือก checkbox ทั้งหมด
                     clearSelection();
                   },
                   child: Text('Confirm menu', style: TextStyle(fontSize: 20)),
