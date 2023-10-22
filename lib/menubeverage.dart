@@ -9,51 +9,63 @@ class Menulist {
 
   List<Menulist> menu = [
     Menulist(
-      "Coconut",
-      [0,1000,100,10,0,0,0,0,0,0],
-      "images/Coconut.jpg",
-      "Coconut"
+      "Punch",
+      [10000,0,0,0,0,0,0,0,0,0],
+      "images/Punch.jpg",
+      "Punch"
     ),
     Menulist(
       "Strawberry",
-      [0,2000,200,20,0,0,0,0,0,0],
+      [0,10000,0,0,0,0,0,0,0,0],
       "images/Strawberry.jpg",
       "Strawberry"
     ),
     Menulist(
-      "Melon",
-      [0,5000,500,50,0,0,0,0,0,0],
-      "images/Melon.jpg",
-      "Melon"
+      "BlueHawaii",
+      [0,0,10000,0,0,0,0,0,0,0],
+      "images/BlueHawaii.jpg",
+      "BlueHawaii"
     ),
     Menulist(
-      "Blue Hawaii",
-      [0,1000,100,10,0,0,0,0,0,0],
-      "images/BlueHawaii.jpg",
-      "Blue Hawaii"
+      "Coconut",
+      [0,0,0,10000,0,0,0,0,0,0],
+      "images/Coconut.jpg",
+      "Coconut"
 ),
     Menulist(
       "Pea",
-      [0,2000,200,20,0,0,0,0,0,0],
+      [0,0,0,0,10000,0,0,0,0,0],
       "images/Pea.jpg",
       "Pea"
       ),
     Menulist(
-      "Orange",
-      [0,5000,500,50,0,0,0,0,0,0],
-      "images/Orange.jpg",
-      "Orange"
+      "Sprite",
+      [0,0,0,0,0,10000,0,0,0,0],
+      "images/sprite.jpg",
+      "Sprite"
       ),
     Menulist(
       "Lemonade",
-      [0,1000,100,10,0,0,0,0,0,0],
+      [0,0,0,0,0,0,10000,0,0,0],
       "images/Lemonade.jpg",
       "Lemonade"
       ),
     Menulist(
+      "Melon",
+      [0,0,0,0,0,0,0,10000,0,0],
+      "images/Melon.jpg",
+      "Melon"
+      ),
+    Menulist(
+      "Orange",
+      [0,0,0,0,0,0,0,0,10000,0],
+      "images/Orange.jpg",
+      "Melon"
+      ),
+    Menulist(
       "Lynchee",
-      [0,1000,100,10,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0,0,0,10000],
       "images/Lyngee.jpg",
-      "Lemonade"
+      "Lynchee"
       ),
   ];
