@@ -71,10 +71,10 @@ class _ListmixsceenState extends State<Listmixsceen> {
     // Send data to Realtime Database
     DatabaseReference databaseReference = FirebaseDatabase.instance.reference();
     Map<String, dynamic> dataToSend = {
-      'pump': '$insertedId,$combinedPumpString',
+      'str': '$insertedId,$combinedPumpString',
     };
 
-    await databaseReference.child('button').update(dataToSend);
+    await databaseReference.child('test').update(dataToSend);
   }
 
   Future<List<MenuMixed>> queryAllMenuItems() async {

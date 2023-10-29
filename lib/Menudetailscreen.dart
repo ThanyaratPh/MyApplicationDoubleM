@@ -23,9 +23,9 @@ void sendToFirebase(MenuItem item, int insertedId) async {
       DatabaseReference databaseReference = FirebaseDatabase.instance.reference();
 
       Map<String, dynamic> dataToSend = {
-      'pump': '$insertedId,${item.pump.join(',')}',
+      'str': '$insertedId,${item.pump.join(',')}',
       };
-      await databaseReference.child('button').update(dataToSend);
+      await databaseReference.child('test').update(dataToSend);
       break;
     }
   }

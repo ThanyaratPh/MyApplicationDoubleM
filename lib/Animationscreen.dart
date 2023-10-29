@@ -86,7 +86,7 @@ class CountdownWidget extends StatelessWidget {
               );
             } else {
               return Text(
-                '35',
+                '20',
                 style: textStyle,
               );
             }
@@ -112,7 +112,7 @@ class _AnimationscreenState extends State<Animationscreen> with TickerProviderSt
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(seconds: 25),
+      duration: Duration(seconds: 20),
       vsync: this,
     );
 
@@ -128,7 +128,7 @@ class _AnimationscreenState extends State<Animationscreen> with TickerProviderSt
   }
 
 void _goToListMenuScreen() async {
-  await Future.delayed(Duration(seconds: 35), () {
+  await Future.delayed(Duration(seconds: 20), () {
     if (mounted) {
       Navigator.pushReplacement(
         context,
@@ -156,7 +156,7 @@ void _goToListMenuScreen() async {
             right: 50,
             top: 70,
             child: CountdownWidget(
-              duration: Duration(seconds: 35),
+              duration: Duration(seconds: 20),
               textStyle: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.bold,
